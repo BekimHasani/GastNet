@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	
+	<definition name="template" template="/WEB-INF/master-page/index.jsp" >
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+		<put-attribute name="functions" value="/WEB-INF/tiles/functions.jsp"/>
+	</definition>
+	
+	<definition name="loginView" extends="template" >
+		<put-attribute name="header" value="" />
+		<put-attribute name="body" value="/WEB-INF/tiles/login.jsp" />
+	</definition>
+	
+	<definition name="homePage" extends="template" >
+		<put-attribute name="header" value="/WEB-INF/tiles/homePageHeader.jsp" />
+		<put-attribute name="body" value="/WEB-INF/tiles/home.jsp" />
+	</definition>
+	
+	<definition name="contact" extends="homePage" >
+		<put-attribute name="body" value="/WEB-INF/tiles/contactUs.jsp" />
+	</definition>
+	
+ 	<definition name="adminDashboard" extends="template" >
+		<put-attribute name="header" value="/WEB-INF/tiles/adminDashboardHeader.jsp" />
+		<put-attribute name="body" value="/WEB-INF/tiles/adminDashboard.jsp" />
+	</definition> 
+
+	<definition name="reports" extends="adminDashboard">
+		<put-attribute name="body" value="/WEB-INF/tiles/reports.jsp" />
+	</definition>
+	
+	<definition name="register-individual" extends="homePage">
+		<put-attribute name="body" value="/WEB-INF/tiles/register-individual.jsp" />
+	</definition>
+	
+	<definition name="register-business" extends="homePage">
+		<put-attribute name="body" value="/WEB-INF/tiles/register-business.jsp" />
+	</definition>
+	
+	<definition name="successful-register" extends="homePage">
+		<put-attribute name="body" value="/WEB-INF/tiles/successfuly-signup.jsp" />
+	</definition>
+
+	<definition name="individualProfile" extends="template">
+	<put-attribute name="header" value="/WEB-INF/tiles/individualHeader.jsp" />
+		<put-attribute name="body" value="/WEB-INF/tiles/individualProfile.jsp"/>
+	</definition>
+	
+	<definition name="individualHomePage" extends="individualProfile">
+	<put-attribute name="header" value="/WEB-INF/tiles/individualHeader.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/tiles/individualHomePage.jsp"/>
+	</definition>
+	
+	<definition name="individualApplications" extends="individualProfile">
+	<put-attribute name="header" value="/WEB-INF/tiles/individualHeader.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/tiles/individualApplications.jsp"/>
+	</definition>
+	
+	<definition name="business-profile" extends="template">
+		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/tiles/business-profile.jsp" />
+	</definition>
+	
+
+</tiles-definitions>

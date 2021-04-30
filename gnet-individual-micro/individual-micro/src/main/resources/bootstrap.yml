@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: individual-micro
+  cloud:
+    config:
+      uri: http://localhost:8083
+  main:
+    allow-bean-definition-overriding: true

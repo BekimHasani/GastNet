@@ -1,0 +1,21 @@
+server:
+  port: 9110
+spring:
+  zipkin:
+    base-url: http://localhost:9411/
+  #DB config
+  datasource:  
+    url: jdbc:mysql://localhost:3306/individual_micro?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #Hibernate config
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:8081/eureka

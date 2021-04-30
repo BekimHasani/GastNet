@@ -1,0 +1,37 @@
+server:
+  port: 8082
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8081/eureka
+zuul:
+  host:
+    connect-timeout-millis: 5000
+  prefix: /api
+  routes:
+    jobs:
+      path: /job/**
+      serviceId: job-micro
+    users:
+      path: /user/**
+      serviceId: user-micro
+    businesses:
+      path: /business/**
+      serviceId: business-micro
+    reviews:
+      path: /review/**
+      serviceId: review-micro
+    individuals:
+      path: /individual/**
+      serviceId: individual-micro
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 300520680998-8ajnjqhhemqon60fan9t89nmbgjitlma.apps.googleusercontent.com
+            client-secret: oMAOBdTM7CMtKd76dwIJfkX3
+  zipkin:
+    base-url: http://localhost:9411/

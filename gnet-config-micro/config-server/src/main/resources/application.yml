@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://bitbucket.org/armendi97/config-properties.git
+          searchPaths: config-data
+server:
+  port: 8083
